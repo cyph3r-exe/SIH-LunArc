@@ -20,7 +20,17 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  bool _visible = false;
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        _visible = true;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     return Center(
       child: Stack(
@@ -39,21 +49,31 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 100),
-                Image.asset('lib/assets/images/whitelogo.png'),
+                
+                AnimatedOpacity(
+                  opacity: _visible ? 1.0 : 0.0,
+                  duration: const Duration(milliseconds: 500),
+                  child: Image.asset('lib/assets/images/whitelogo.png'),
+                ),
 
-                const SizedBox(height: 20),
-
-                ElevatedButton(
+                AnimatedOpacity(
+                  opacity: _visible ? 1.0 : 0.0,
+                  duration: const Duration(milliseconds: 500),
+                  child: ElevatedButton(
                   onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Mainviewer()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Mainviewer()));
                   },
-                  child: const Text('Start Exploring',
-                  style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontFamily: 'didot',
-                  ),),
-
+                  child: const Text(
+                    'Start Exploring',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontFamily: 'didot',
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white.withOpacity(0),
                     shape: RoundedRectangleBorder(
@@ -64,7 +84,7 @@ class _LandingPageState extends State<LandingPage> {
                       ),
                     ),
                   ),
-                  
+                ),
                 ),
               ],
             ),

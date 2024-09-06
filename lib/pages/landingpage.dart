@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:uipracticeapp4/pages/mainviewer.dart';
 
 class StartLandingPage extends StatelessWidget {
@@ -8,6 +9,19 @@ class StartLandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LandingPage(),
+      // appBar: AppBar(
+      //   title: const Text('LunArc'),
+      //   shape: const RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.only(
+      //       bottomLeft: Radius.circular(20),
+      //       bottomRight: Radius.circular(20),
+      //     ),
+      //     side: BorderSide(
+      //       color: Colors.white,
+      //       width: 1,
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
@@ -52,13 +66,13 @@ class _LandingPageState extends State<LandingPage> {
                 
                 AnimatedOpacity(
                   opacity: _visible ? 1.0 : 0.0,
-                  duration: const Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 1500),
                   child: Image.asset('lib/assets/images/whitelogo.png'),
                 ),
 
                 AnimatedOpacity(
                   opacity: _visible ? 1.0 : 0.0,
-                  duration: const Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 1500),
                   child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(

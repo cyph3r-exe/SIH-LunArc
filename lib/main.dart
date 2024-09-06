@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uipracticeapp4/pages/homepage.dart';
+import 'package:uipracticeapp4/pages/landingpage.dart';
+import 'package:uipracticeapp4/pages/mainviewer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hydra Corps',
-      
-      home: StartHomePage(),
+      // home: Mainviewer(),
+      home: StartLandingPage(),
     );
   }
 }

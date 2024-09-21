@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uipracticeapp4/pages/landingpage.dart';
-import 'package:uipracticeapp4/pages/mainviewer.dart';
+
 
 void main() {
   runApp(const MyApp());

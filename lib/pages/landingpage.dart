@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:uipracticeapp4/pages/mainviewer.dart';
 
 class StartLandingPage extends StatelessWidget {
@@ -9,19 +9,7 @@ class StartLandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LandingPage(),
-      // appBar: AppBar(
-      //   title: const Text('LunArc'),
-      //   shape: const RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.only(
-      //       bottomLeft: Radius.circular(20),
-      //       bottomRight: Radius.circular(20),
-      //     ),
-      //     side: BorderSide(
-      //       color: Colors.white,
-      //       width: 1,
-      //     ),
-      //   ),
-      // ),
+
     );
   }
 }

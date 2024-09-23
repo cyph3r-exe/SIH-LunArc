@@ -11,6 +11,11 @@ void handleLinkOrEmail(String url) async {
   }
 }
 
+void handlePhoneCall(String phoneNumber) async {
+  // Use 'tel:' URI scheme to launch phone dialer
+  await launchUrl(Uri.parse('tel:$phoneNumber'));
+}
+
 Widget aboutTeamTemplate(BuildContext context, String imageaddress, String name,
     String role, String description, String email, String phone, String link) {
   return Stack(
@@ -62,9 +67,7 @@ Widget aboutTeamTemplate(BuildContext context, String imageaddress, String name,
                   ),
                   IconButton(
                     icon: Icon(Icons.phone),
-                    onPressed: () {
-                      //implement phone call
-                    },
+                    onPressed: () => handlePhoneCall(phone),
                   ),
                   IconButton(
                     icon: Icon(Icons.link),
